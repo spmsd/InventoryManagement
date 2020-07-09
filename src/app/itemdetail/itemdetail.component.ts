@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Inventory } from '../shared/inventory';
 
+import { Category } from '../shared/category';
 @Component({
   selector: 'app-itemdetail',
   templateUrl: './itemdetail.component.html',
@@ -9,7 +10,7 @@ import { Inventory } from '../shared/inventory';
 export class ItemdetailComponent implements OnInit {
 
   @Input()
-  item: Inventory;
+  category: Category;
  
   constructor() { }
 

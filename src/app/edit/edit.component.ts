@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Inventory } from '../shared/inventory';
 
+import { Category } from '../shared/category';
+import { CategoryService } from '../services/category.service';
 
-import { InventoryService } from '../services/inventory.service';
 
 @Component({
   selector: 'app-edit',
@@ -11,19 +11,18 @@ import { InventoryService } from '../services/inventory.service';
 })
 export class EditComponent implements OnInit {
 
-   inventories: Inventory[];
 
-  selectedItem: Inventory;
+  categories: Category[];
 
-  constructor(private inventoryService: InventoryService) { }
+  selectedCategory: Category;
+
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
-    this.inventories = this.inventoryService.getInventory();
+    this.categories = this.categoryService.getCategory();
   }
 
- 
-
-  onSelect(item: Inventory){
-    this.selectedItem = item;
+  onSelect(category: Category){
+    this.selectedCategory = category;
   }
 }

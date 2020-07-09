@@ -10,16 +10,16 @@
   </div>
 
   <div fxFlex>
-    <mat-grid-list cols="4" rowHeight="150px">
-      <mat-grid-tile *ngFor="let item of inventories" (click) = "onSelect(item)">
-        <img height="100px" src={{item.image}}>
+    <mat-grid-list cols="3" rowHeight="150px">
+      <mat-grid-tile *ngFor="let category of categories" (click) = "onSelect(category)">
+        <img height="100px" src={{category.image}}>
         <mat-grid-tile-footer>
-          {{item.prod_name | uppercase}}
+          {{category.cat_name | uppercase}}
         </mat-grid-tile-footer>
       </mat-grid-tile>
     </mat-grid-list>
   </div>
 
 
-  <app-itemdetail [item] = "selectedItem"></app-itemdetail>
+  <!--<app-itemdetail [cat] = "selectedItem"></app-itemdetail>-->
 </div>

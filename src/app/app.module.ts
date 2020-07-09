@@ -8,18 +8,23 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { InventoryService } from './services/inventory.service';
+import { CategoryService } from './services/category.service';
 
 import { AppComponent } from './app.component';
 
 import 'hammerjs';
 import { EditComponent } from './edit/edit.component';
 import { ItemdetailComponent } from './itemdetail/itemdetail.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EditComponent,
-    ItemdetailComponent
+    ItemdetailComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import { ItemdetailComponent } from './itemdetail/itemdetail.component';
     MatButtonModule,
     MatListModule
   ],
-  providers: [InventoryService],
+  providers: [CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
