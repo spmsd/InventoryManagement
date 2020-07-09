@@ -1,0 +1,25 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Inventory Items</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <mat-grid-list cols="4" rowHeight="150px">
+      <mat-grid-tile *ngFor="let item of inventories" (click) = "onSelect(item)">
+        <img height="100px" src={{item.image}}>
+        <mat-grid-tile-footer>
+          {{item.prod_name | uppercase}}
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+
+  <app-itemdetail [item] = "selectedItem"></app-itemdetail>
+</div>
