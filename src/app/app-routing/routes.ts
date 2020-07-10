@@ -7,7 +7,7 @@ import { UpdateComponent } from '../update/update.component'; // to add products
 
 export const routes: Routes = [
   { path: 'home',  component: EditComponent },
-  { path: 'display',     component: ItemdetailComponent },
+  { path: 'itemdetail/:inv_id',     component: ItemdetailComponent },
   { path: 'update', component: UpdateComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

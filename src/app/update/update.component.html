@@ -1,3 +1,52 @@
-<p>
-  update works!
-</p>
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+  <div fxFlex *ngIf="item" class="table-responsive"> <!-- dish is the variable from dishdetail.ts file-->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{item.prod_name}} Details</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table class="table table-striped">
+          <tr>
+            <th>Title</th>
+            <th>Information</th>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>{{item.prod_name | uppercase}}</td>
+          </tr>
+          <tr>
+            <td>Quantity</td>
+            <td>{{item.qty}}</td>
+          </tr>
+          <tr>
+            <td>Expiration date</td>
+            <td>{{item.expr_date}}</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>{{item.price}} $</td>
+          </tr>
+          <tr>
+            <td>Seller</td>
+            <td>{{item.seller}}</td>
+          </tr>
+        </table>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="goBack()">BACK</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  
+
+</div>

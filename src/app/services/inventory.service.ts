@@ -15,7 +15,8 @@ export class InventoryService {
   	return INVENTORIES;
   }
 
-  getVegetables(): Inventory[]{
-  	return VEGETABLES;
+ 
+  getSingleItem(inv_id: string): Inventory {
+    return INVENTORIES.filter((item) => (item.inv_id === inv_id))[0];
   }
 }

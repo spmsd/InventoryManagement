@@ -17,8 +17,8 @@ export class EditComponent implements OnInit {
   categories: Category[];
   itemslist: Inventory[];
   displaylist: Inventory[];
-
   selectedCategory: Category;
+  selectedItem: Inventory;
 
   constructor(private categoryService: CategoryService,private inventoryService: InventoryService) {
     this.displaylist = [];
@@ -40,5 +40,9 @@ export class EditComponent implements OnInit {
 
       }
     }
+  }
+
+  onSelectItem(item: Inventory){
+    this.selectedItem = item;
   }
 }

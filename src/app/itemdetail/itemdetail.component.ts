@@ -1,9 +1,9 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Inventory } from '../shared/inventory';
-
 import { Category } from '../shared/category';
-
 import { InventoryService } from '../services/inventory.service';
+import { Params, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-itemdetail',
@@ -11,26 +11,21 @@ import { InventoryService } from '../services/inventory.service';
   styleUrls: ['./itemdetail.component.scss']
 })
 export class ItemdetailComponent implements OnInit {
-  
-  @Input()
-  category: Category;
-  
-  itemslist: Inventory[];
-
-  displayItems: Inventory[];
  
-  constructor(private inventoryService: InventoryService) { }
+  item: Inventory;
+ 
+  constructor(private route: ActivatedRoute,
+    private location: Location,
+    private inventoryservice: InventoryService) { }
 
   ngOnInit() {
-  		this.itemslist = this.inventoryService.getInventory();
-      this.display();
+  		let inv_id = +this.route.snapshot.params['inv_id'];
+  		this.item = this.inventoryservice.getSingleItem(inv_id.toString());
+
   }
 
-  
-
-  display(){
-    
-    
+  goBack(): void {
+    this.location.back();
   }
 
 

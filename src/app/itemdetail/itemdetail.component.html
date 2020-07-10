@@ -6,16 +6,47 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
-  <div fxFlex *ngIf="category">
-    <mat-grid-list cols="3" rowHeight="150px">
-      <mat-grid-tile *ngFor="let item of items">
-        <img height="100px" src={{item.image}}>
-        <mat-grid-tile-footer>
-          {{item.prod_name | uppercase}}
-        </mat-grid-tile-footer>
-      </mat-grid-tile>
-    </mat-grid-list>
+  <div fxFlex *ngIf="item" class="table-responsive"> <!-- dish is the variable from dishdetail.ts file-->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{item.prod_name}} Details</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table class="table table-striped">
+          <tr>
+            <th>Title</th>
+            <th>Information</th>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>{{item.prod_name | uppercase}}</td>
+          </tr>
+          <tr>
+            <td>Quantity</td>
+            <td>{{item.qty}}</td>
+          </tr>
+          <tr>
+            <td>Expiration date</td>
+            <td>{{item.expr_date}}</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>{{item.price}} $</td>
+          </tr>
+          <tr>
+            <td>Seller</td>
+            <td>{{item.seller}}</td>
+          </tr>
+        </table>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="goBack()">BACK</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
+  
   
 
 </div>
