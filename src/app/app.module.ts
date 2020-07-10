@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { InventoryService } from './services/inventory.service';
 import { CategoryService } from './services/category.service';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
 
@@ -17,6 +18,7 @@ import { EditComponent } from './edit/edit.component';
 import { ItemdetailComponent } from './itemdetail/itemdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FooterComponent } from './footer/footer.component';
     EditComponent,
     ItemdetailComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +37,10 @@ import { FooterComponent } from './footer/footer.component';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
+    AppRoutingModule,
     MatListModule
   ],
-  providers: [CategoryService],
+  providers: [CategoryService,InventoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

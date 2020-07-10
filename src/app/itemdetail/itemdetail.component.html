@@ -6,19 +6,15 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
-  <div fxFlex *ngIf="item">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>
-          <h3>{{item.prod_name | uppercase}}</h3>
-        </mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src={{item.image}} alt={{item.prod_name}} width="100" height="300">
-      <mat-card-content>
-        <p>{{item.price}}
-        </p>
-      </mat-card-content>
-    </mat-card>
+  <div fxFlex *ngIf="category">
+    <mat-grid-list cols="3" rowHeight="150px">
+      <mat-grid-tile *ngFor="let item of items">
+        <img height="100px" src={{item.image}}>
+        <mat-grid-tile-footer>
+          {{item.prod_name | uppercase}}
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
   
 
