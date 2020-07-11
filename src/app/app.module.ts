@@ -23,6 +23,7 @@ import { ItemdetailComponent } from './itemdetail/itemdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UpdateComponent } from './update/update.component';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UpdateComponent } from './update/update.component';
     ItemdetailComponent,
     HeaderComponent,
     FooterComponent,
-    UpdateComponent
+    UpdateComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,

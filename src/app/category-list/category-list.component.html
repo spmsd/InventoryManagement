@@ -1,0 +1,31 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px"> 
+
+  <div fxFlex>
+    <div>
+      <h3>Category Items</h3>
+      <hr>
+    </div>
+  </div>
+
+  
+  <div fxFlex *ngIf="displaylist">
+    <mat-grid-list cols="3" rowHeight="150px">
+      <mat-grid-tile *ngFor="let item of displaylist" [routerLink]="['/itemdetail', item.inv_id]"> <!--Sending this to another component-->
+        <img height="100px" src={{item.image}}>
+        <mat-grid-tile-footer>
+          Name : {{item.prod_name | uppercase}}<br>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div>
+    <button (click)="goBack()">BACK</button>
+  </div>
+
+  <!--<app-itemdetail [item] = "selectedItem"></app-itemdetail>-->
+
+  
+</div>

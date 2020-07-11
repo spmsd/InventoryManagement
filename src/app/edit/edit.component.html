@@ -11,7 +11,7 @@
 
   <div fxFlex>
     <mat-grid-list cols="3" rowHeight="150px">
-      <mat-grid-tile *ngFor="let category of categories" (click) = "onSelect(category)">
+      <mat-grid-tile *ngFor="let category of categories" [routerLink]="['/category-list', category.cat_name]">
         <img height="100px" src={{category.image}}>
         <mat-grid-tile-footer>
           {{category.cat_name | uppercase}}
@@ -20,19 +20,7 @@
     </mat-grid-list>
   </div>
 
-
-  <div fxFlex *ngIf="displaylist">
-    <mat-grid-list cols="3" rowHeight="150px">
-      <mat-grid-tile *ngFor="let item of displaylist" [routerLink]="['/itemdetail', item.inv_id]"> <!--Sending this to another component-->
-        <img height="100px" src={{item.image}}>
-        <mat-grid-tile-footer>
-          Name : {{item.prod_name | uppercase}}<br>
-        </mat-grid-tile-footer>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div>
-
-  <!--<app-itemdetail [item] = "selectedItem"></app-itemdetail>-->
+ <!--<app-itemdetail [item] = "selectedItem"></app-itemdetail>-->
 
   
 </div>

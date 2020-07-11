@@ -9,6 +9,8 @@ import { VEGETABLES } from '../shared/vegetables';
 })
 export class InventoryService {
 
+  displaylist:Inventory[];
+
   constructor() { }
 
   getInventory(): Inventory[]{
@@ -18,5 +20,20 @@ export class InventoryService {
  
   getSingleItem(inv_id: string): Inventory {
     return INVENTORIES.filter((item) => (item.inv_id === inv_id))[0];
+  }
+
+
+   getCategoryList(cat_name: string): Inventory[]{
+    this.displaylist = [];
+    for(let key in INVENTORIES){
+      let value = INVENTORIES[key];
+      //console.log(category.cat_name);
+      //console.log(value);
+      if(cat_name == value.cat_name){
+        this.displaylist.push(INVENTORIES[key]);
+
+      }
+    }
+    return this.displaylist;
   }
 }

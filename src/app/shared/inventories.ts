@@ -81,4 +81,24 @@ export const INVENTORIES: Inventory[] = [
       "price": "20",
       "seller": "John"
     },
+    {
+      "inv_id": "108",
+      "cat_name": "Snacks",
+      "prod_name": "Chips",
+      "image": "/assets/images/chip.jpg",
+      "qty": "5",
+      "expr_date": '2021-02-13T17:57:28.556094Z',
+      "price": "2.98",
+      "seller": "Lays"
+    },
+    {
+      "inv_id": "109",
+      "cat_name": "Snacks",
+      "prod_name": "Cookies",
+      "image": "/assets/images/cookie.jpg",
+      "qty": "100",
+      "expr_date": '2021-02-13T17:57:28.556094Z',
+      "price": "2.98",
+      "seller": "Gowtham"
+    },
 ];
