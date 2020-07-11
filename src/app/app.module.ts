@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -44,6 +45,7 @@ import { UpdateComponent } from './update/update.component';
     MatSlideToggleModule,
     AppRoutingModule,
     MatListModule,
+    MatInputModule,
     ReactiveFormsModule
   ],
   providers: [CategoryService,InventoryService],

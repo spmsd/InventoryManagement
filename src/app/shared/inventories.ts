@@ -11,7 +11,7 @@ export const INVENTORIES: Inventory[] = [
       "price": ".99",
       "seller": "mark"
     },
-    {
+     {
       "inv_id": "102",
       "cat_name": "Vegetables",
       "prod_name": "Carrot",
@@ -40,5 +40,45 @@ export const INVENTORIES: Inventory[] = [
       "expr_date": '2021-02-13T17:57:28.556094Z',
       "price": "2.98",
       "seller": "Dunkin"
-    }
+    },
+    {
+      "inv_id": "105",
+      "cat_name": "Vegetables",
+      "prod_name": "Cabbage",
+      "image": "/assets/images/cabbage.jpg",
+      "qty": "3",
+      "expr_date": '2020-02-13T17:57:28.556094Z',
+      "price": "2.99",
+      "seller": "Priya"
+    },
+    {
+      "inv_id": "106",
+      "cat_name": "Vegetables",
+      "prod_name": "Spinach",
+      "image": "/assets/images/spinach.jpg",
+      "qty": "10",
+      "expr_date": '2020-02-13T17:57:28.556094Z',
+      "price": "20",
+      "seller": "John"
+    },
+    {
+      "inv_id": "107",
+      "cat_name": "Fruits",
+      "prod_name": "Mango",
+      "image": "/assets/images/mango.jpg",
+      "qty": "10",
+      "expr_date": '2020-02-13T17:57:28.556094Z',
+      "price": "20",
+      "seller": "John"
+    },
+     {
+      "inv_id": "107",
+      "cat_name": "Fruits",
+      "prod_name": "Grapes",
+      "image": "/assets/images/grapes.jpg",
+      "qty": "10",
+      "expr_date": '2020-02-13T17:57:28.556094Z',
+      "price": "20",
+      "seller": "John"
+    },
 ];

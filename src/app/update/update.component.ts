@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Inventory } from '../shared/inventory';
+import { Inventory,CategotyName } from '../shared/inventory';
 
 @Component({
   selector: 'app-update',
@@ -11,6 +11,7 @@ export class UpdateComponent implements OnInit {
 	
   updateForm: FormGroup;
   updateItem: Inventory;
+  categoryType = CategotyName;
 
   constructor(private fb: FormBuilder) {
   	this.createForm();
@@ -21,7 +22,7 @@ export class UpdateComponent implements OnInit {
 
   createForm() {
     this.updateForm = this.fb.group({
-      	inv_id: '';
+      inv_id: '';
 	    cat_name: '';
 	    prod_name: '';
 	    image: '';

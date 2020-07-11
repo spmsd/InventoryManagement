@@ -8,3 +8,5 @@ export class Inventory {
     price: string;
     seller: string;
 }
+
+export const CategotyName = ['Vegetables', 'Fruits', 'Snacks'];
