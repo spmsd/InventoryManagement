@@ -3,6 +3,7 @@ import { Inventory } from '../shared/inventory';
 import { InventoryService } from '../services/inventory.service';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { switchMap } from 'rxjs/operators'; // to use params observable
 
 @Component({
   selector: 'app-category-list',
@@ -18,9 +19,13 @@ export class CategoryListComponent implements OnInit {
     private inventoryservice: InventoryService) { }
 
   ngOnInit() {
-  	let cat_name = this.route.snapshot.params['cat_name'];
-    console.log(cat_name);
-  	this.displaylist = this.inventoryservice.getCategoryList(cat_name.toString());
+  	//let cat_name = this.route.snapshot.params['cat_name'];
+    //console.log(cat_name);
+  	//this.inventoryservice.getCategoryList(cat_name.toString()).subscribe(displaylist => this.displaylist = displaylist);
+    //console.log(this.displaylist);
+
+    this.route.params.pipe(switchMap((params: Params) => this.inventoryservice.getCategoryList(params['cat_name'])))
+    .subscribe(displaylist => {this.displaylist = displaylist; });
     console.log(this.displaylist);
   }
 

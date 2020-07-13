@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Inventory } from '../shared/inventory';
 import { INVENTORIES } from '../shared/inventories';
-import { VEGETABLES } from '../shared/vegetables';
+import { Observable, of } from 'rxjs';
 
 
 @Injectable({
@@ -13,17 +13,17 @@ export class InventoryService {
 
   constructor() { }
 
-  getInventory(): Inventory[]{
-  	return INVENTORIES;
+  getInventory(): Observable<Inventory[]>{
+  	return of(INVENTORIES);
   }
 
  
-  getSingleItem(inv_id: string): Inventory {
-    return INVENTORIES.filter((item) => (item.inv_id === inv_id))[0];
+  getSingleItem(inv_id: string): Observable<Inventory> {
+    return of(INVENTORIES.filter((item) => (item.inv_id === inv_id))[0]);
   }
 
 
-   getCategoryList(cat_name: string): Inventory[]{
+   getCategoryList(cat_name: string): Observable<Inventory[]>{
     this.displaylist = [];
     for(let key in INVENTORIES){
       let value = INVENTORIES[key];
@@ -34,6 +34,6 @@ export class InventoryService {
 
       }
     }
-    return this.displaylist;
+    return of(this.displaylist);
   }
 }

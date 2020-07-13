@@ -15,34 +15,18 @@ export class EditComponent implements OnInit {
 
 
   categories: Category[];
-  itemslist: Inventory[];
-  displaylist: Inventory[];
-  selectedCategory: Category;
-  selectedItem: Inventory;
+ 
 
   constructor(private categoryService: CategoryService,private inventoryService: InventoryService) {
-    this.displaylist = [];
+    
   }
 
   ngOnInit() {
-    this.categories = this.categoryService.getCategory();
-    this.itemslist = this.inventoryService.getInventory();
+    this.categoryService.getCategory().subscribe(categories => this.categories = categories);
+    console.log(this.categories);
   }
 
-  onSelect(category: Category){
-    this.displaylist = [];
-    for(let key in this.itemslist){
-      let value = this.itemslist[key];
-      //console.log(category.cat_name);
-      //console.log(value);
-      if(category.cat_name == value.cat_name){
-        this.displaylist.push(this.itemslist[key]);
 
-      }
-    }
-  }
 
-  onSelectItem(item: Inventory){
-    this.selectedItem = item;
-  }
+  
 }

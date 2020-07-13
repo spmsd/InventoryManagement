@@ -4,6 +4,7 @@ import { Category } from '../shared/category';
 import { InventoryService } from '../services/inventory.service';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { switchMap } from 'rxjs/operators'; // to use params observable
 
 @Component({
   selector: 'app-itemdetail',
@@ -19,8 +20,9 @@ export class ItemdetailComponent implements OnInit {
     private inventoryservice: InventoryService) { }
 
   ngOnInit() {
-  		let inv_id = +this.route.snapshot.params['inv_id'];
-  		this.item = this.inventoryservice.getSingleItem(inv_id.toString());
+
+      this.route.params.pipe(switchMap((params: Params) => this.inventoryservice.getSingleItem(params['inv_id'])))
+      .subscribe(item => {this.item = item; });
 
   }
 
