@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Inventory } from '../shared/inventory';
-import { INVENTORIES } from '../shared/inventories';
 import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { baseURL } from '../shared/baseurl';
 
 
 @Injectable({
@@ -9,31 +11,34 @@ import { Observable, of } from 'rxjs';
 })
 export class InventoryService {
 
-  displaylist:Inventory[];
+  //displaylist:Inventory[];
+  //inventoriesList: Inventory[];
 
-  constructor() { }
+  constructor(private http: HttpClient) { 
+  
+  }
 
   getInventory(): Observable<Inventory[]>{
-  	return of(INVENTORIES);
+  	return this.http.get<Inventory[]>(baseURL + 'inventories');
   }
 
  
   getSingleItem(inv_id: string): Observable<Inventory> {
-    return of(INVENTORIES.filter((item) => (item.inv_id === inv_id))[0]);
+    let params1 = new HttpParams().set('inv_id',inv_id);
+    console.log(baseURL + 'inventories/',{params:params1});
+    return this.http.get<Inventory>(baseURL + 'inventories/',{params:params1});
+    
+    //return this.http.get<Inventory>(baseURL + 'inventories/?inv_id='+inv_id);
+
+  }
+
+  getCategoryList(cat_name: string): Observable<Inventory[]>{
+    let params1 = new HttpParams().set('cat_name',cat_name);
+    console.log(baseURL + 'inventories/',{params:params1});
+    return this.http.get<Inventory[]>(baseURL + 'inventories/',{params:params1});
   }
 
 
-   getCategoryList(cat_name: string): Observable<Inventory[]>{
-    this.displaylist = [];
-    for(let key in INVENTORIES){
-      let value = INVENTORIES[key];
-      //console.log(category.cat_name);
-      //console.log(value);
-      if(cat_name == value.cat_name){
-        this.displaylist.push(INVENTORIES[key]);
 
-      }
-    }
-    return of(this.displaylist);
-  }
+
 }

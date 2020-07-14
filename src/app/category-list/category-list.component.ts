@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Inventory } from '../shared/inventory';
 import { InventoryService } from '../services/inventory.service';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { switchMap } from 'rxjs/operators'; // to use params observable
+import { switchMap } from 'rxjs/operators'; // to use params observable 
 
 @Component({
   selector: 'app-category-list',
@@ -16,7 +16,8 @@ export class CategoryListComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private location: Location,
-    private inventoryservice: InventoryService) { }
+    private inventoryservice: InventoryService,
+     @Inject('baseURL') private baseURL) { }
 
   ngOnInit() {
   	//let cat_name = this.route.snapshot.params['cat_name'];
@@ -26,7 +27,8 @@ export class CategoryListComponent implements OnInit {
 
     this.route.params.pipe(switchMap((params: Params) => this.inventoryservice.getCategoryList(params['cat_name'])))
     .subscribe(displaylist => {this.displaylist = displaylist; });
-    console.log(this.displaylist);
+    
+    //console.log(this.displaylist);
   }
 
   goBack(): void {

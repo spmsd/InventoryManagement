@@ -14,6 +14,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { baseURL } from './shared/baseurl';
 
 import { AppComponent } from './app.component';
 
@@ -48,9 +51,12 @@ import { CategoryListComponent } from './category-list/category-list.component';
     AppRoutingModule,
     MatListModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [CategoryService,InventoryService],
+  providers: [CategoryService,InventoryService,
+  {provide: 'baseURL', useValue: baseURL}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

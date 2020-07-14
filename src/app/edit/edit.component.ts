@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { Category } from '../shared/category';
 import { CategoryService } from '../services/category.service';
@@ -17,7 +17,7 @@ export class EditComponent implements OnInit {
   categories: Category[];
  
 
-  constructor(private categoryService: CategoryService,private inventoryService: InventoryService) {
+  constructor(private categoryService: CategoryService,private inventoryService: InventoryService,  @Inject('baseURL') private baseURL) {
     
   }
 
