@@ -13,8 +13,8 @@
     <form novalidate [formGroup]="updateForm" #uform="ngForm" (ngSubmit)="onSubmit()">
       <p>
         <mat-form-field class="half-width">
-          <input matInput formControlName="inv_id" placeholder="Id" type="text" required>
-          <mat-error *ngIf="updateForm.get('inv_id').hasError('required') && updateForm.get('inv_id').touched">Id is required</mat-error>
+          <input matInput formControlName="id" placeholder="Id" type="text" required>
+          <mat-error *ngIf="updateForm.get('id').hasError('required') && updateForm.get('id').touched">Id is required</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
           <mat-select matInput placeholder="Category" formControlName="cat_name" required>
@@ -50,8 +50,14 @@
       </p>
       <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="updateForm.invalid">Submit</button>
     </form>
+    <div *ngIf="item">
+      <br>
+      <span class="FinishMsg">The Item has been Added !!!</span> 
+    </div>
   	</div>
   </div>
+
+  
   
   
 

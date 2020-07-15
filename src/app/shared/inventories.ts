@@ -2,7 +2,7 @@ import { Inventory } from './inventory';
 
 export const INVENTORIES: Inventory[] = [
   {
-      inv_id: '101',
+      id: '101',
       cat_name: "Vegetables",
       prod_name: "Carrot",
       image: "/assets/images/carrot.jpg",
@@ -12,7 +12,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "mark"
     },
      {
-      inv_id: "102",
+      id: "102",
       cat_name: "Vegetables",
       prod_name: "Capsicum",
       image: "/assets/images/capsicum.jpg",
@@ -22,7 +22,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "bob"
     },
     {
-      inv_id: "103",
+      id: "103",
       cat_name: "Fruits",
       prod_name: "Orange",
       image: "/assets/images/orange.jpg",
@@ -32,7 +32,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "mark"
     },
     {
-      inv_id: "104",
+      id: "104",
       cat_name: "Snacks",
       prod_name: "Donut",
       image: "/assets/images/donut.png",
@@ -42,7 +42,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "Dunkin"
     },
     {
-      inv_id: "105",
+      id: "105",
       cat_name: "Vegetables",
       prod_name: "Cabbage",
       image: "/assets/images/cabbage.jpg",
@@ -52,7 +52,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "Priya"
     },
     {
-      inv_id: "106",
+      id: "106",
       cat_name: "Vegetables",
       prod_name: "Spinach",
       image: "/assets/images/spinach.jpg",
@@ -62,7 +62,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "John"
     },
     {
-      inv_id: "107",
+      id: "107",
       cat_name: "Fruits",
       prod_name: "Mango",
       image: "/assets/images/mango.jpg",
@@ -72,7 +72,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "John"
     },
      {
-      inv_id: "110",
+      id: "110",
       cat_name: "Fruits",
       prod_name: "Grapes",
       image: "/assets/images/grapes.jpg",
@@ -82,7 +82,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "John"
     },
     {
-      inv_id: "108",
+      id: "108",
       cat_name: "Snacks",
       prod_name: "Chips",
       image: "/assets/images/chip.jpg",
@@ -92,7 +92,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "Lays"
     },
     {
-      inv_id: "109",
+      id: "109",
       cat_name: "Snacks",
       prod_name: "Cookies",
       image: "/assets/images/cookie.jpg",

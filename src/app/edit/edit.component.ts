@@ -23,7 +23,6 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     this.categoryService.getCategory().subscribe(categories => this.categories = categories);
-    console.log(this.categories);
   }
 
 

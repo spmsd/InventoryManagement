@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Inventory } from '../shared/inventory';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { baseURL } from '../shared/baseurl';
 
 
@@ -23,12 +23,12 @@ export class InventoryService {
   }
 
  
-  getSingleItem(inv_id: string): Observable<Inventory> {
-    let params1 = new HttpParams().set('inv_id',inv_id);
+  getSingleItem(id: string): Observable<Inventory> {
+    let params1 = new HttpParams().set('id',id);
     console.log(baseURL + 'inventories/',{params:params1});
     return this.http.get<Inventory>(baseURL + 'inventories/',{params:params1});
     
-    //return this.http.get<Inventory>(baseURL + 'inventories/?inv_id='+inv_id);
+    //return this.http.get<Inventory>(baseURL + 'inventories/?id='+id);
 
   }
 
@@ -37,6 +37,27 @@ export class InventoryService {
     console.log(baseURL + 'inventories/',{params:params1});
     return this.http.get<Inventory[]>(baseURL + 'inventories/',{params:params1});
   }
+
+  updatePutItem(item: Inventory): Observable<Inventory> {
+    console.log("To update in service,:");
+    console.log(item);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.put<Inventory>(baseURL + 'inventories/' + item.id, item, httpOptions);
+
+  }
+
+   addPostItem(item: Inventory): Observable<Inventory>{ 
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type':  'application/json' })
+    };
+    return this.http.post<Inventory>(baseURL + 'inventories/', item, httpOptions);
+  }
+
+
 
 
 

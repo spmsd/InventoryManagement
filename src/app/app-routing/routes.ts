@@ -7,7 +7,7 @@ import { CategoryListComponent } from '../category-list/category-list.component'
 
 export const routes: Routes = [
   { path: 'home',  component: EditComponent },
-  { path: 'itemdetail/:inv_id',     component: ItemdetailComponent },
+  { path: 'itemdetail/:id',     component: ItemdetailComponent },
   { path: 'update', component: UpdateComponent},
   { path: 'category-list/:cat_name',     component: CategoryListComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }

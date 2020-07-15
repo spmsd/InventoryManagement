@@ -27,8 +27,6 @@ export class CategoryListComponent implements OnInit {
 
     this.route.params.pipe(switchMap((params: Params) => this.inventoryservice.getCategoryList(params['cat_name'])))
     .subscribe(displaylist => {this.displaylist = displaylist; });
-    
-    //console.log(this.displaylist);
   }
 
   goBack(): void {

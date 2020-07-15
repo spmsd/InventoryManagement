@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Inventory,CategotyName } from '../shared/inventory';
+import { InventoryService } from '../services/inventory.service';
+import { Params, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { switchMap } from 'rxjs/operators'; // to use params observable 
 
 @Component({
   selector: 'app-update',
@@ -14,17 +18,27 @@ export class UpdateComponent implements OnInit {
   updateForm: FormGroup;
   updateItem: Inventory;
   categoryType = CategotyName;
+  inventories: Inventory[];
+  item: Inventory;
+  itemcopy: Inventory;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private inventoryservice: InventoryService,private route: ActivatedRoute,
+    private location: Location) {
   	this.createForm();
   }
 
   ngOnInit() {
+
+    this.route.params.pipe(switchMap((params: Params) => this.inventoryservice.getSingleItem(params['id'])))
+      .subscribe(item => {this.item = item[0]; this.itemcopy = item;});
+
+    //this.inventoryService.getInventory().subscribe(inventories => {this.inventories = inventories;});
+
   }
 
   createForm() {
     this.updateForm = this.fb.group({
-      inv_id: ['', Validators.required ],
+      id: ['', Validators.required ],
 	    cat_name: ['', Validators.required ],
 	    prod_name: ['', Validators.required ],
 	    image: '',
@@ -37,9 +51,12 @@ export class UpdateComponent implements OnInit {
 
   onSubmit() {
     this.updateItem = this.updateForm.value;
-    console.log(this.updateItem);
+    this.itemcopy = this.updateItem;
+    this.inventoryservice.addPostItem(this.itemcopy).subscribe(item => {this.item = item; this.itemcopy = item; console.log("hi ! the updated item : "); console.log(this.item);});
+
+    
     this.updateForm.reset({
-      inv_id: '',
+      id: '',
       cat_name: '',
       prod_name: '',
       image: '',

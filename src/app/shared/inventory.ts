@@ -1,5 +1,5 @@
 export class Inventory {
-	inv_id: string;
+	id: string;
     cat_name: string;
     prod_name: string;
     image: string;
