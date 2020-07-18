@@ -1,13 +1,9 @@
 <div class="container"
-    fxLayout="row"
-    fxLayout.sm="column"
-    fxLayout.xs="column"
-    fxLayoutAlign.gt-md="space-around center"
-    fxLayoutGap="10px" 
-    fxLayoutGap.xs="0">
+    fxLayout="column"
+    fxLayoutGap="10px">
 
-  <div fxFlex> <!-- dish is the variable from dishdetail.ts file-->
-  	<div fxFlex fxFlexOffset="20px" class="form-size">
+  
+  <div fxFlex fxFlexOffset="20px" class="form-size">
     <h3>Add to Inventory</h3>
 
     <form novalidate [formGroup]="updateForm" #uform="ngForm" (ngSubmit)="onSubmit()">
@@ -54,7 +50,6 @@
       <br>
       <span class="FinishMsg">The Item has been Added !!!</span> 
     </div>
-  	</div>
   </div>
 
   

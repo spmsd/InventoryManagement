@@ -1,7 +1,7 @@
 export class Inventory {
 	id: string;
-    cat_name: string;
-    prod_name: string;
+    category: string;
+    name: string;
     image: string;
     qty: string;
     expr_date: string;
