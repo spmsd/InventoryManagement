@@ -29,8 +29,8 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.params.pipe(switchMap((params: Params) => this.inventoryservice.getSingleItem(params['id'])))
-      .subscribe(item => {this.item = item[0]; this.itemcopy = item;});
+    //this.route.params.pipe(switchMap((params: Params) => this.inventoryservice.getSingleItem(params['id'])))
+    //  .subscribe(item => {this.item = item[0]; this.itemcopy = item;});
 
     //this.inventoryService.getInventory().subscribe(inventories => {this.inventories = inventories;});
 
@@ -38,9 +38,8 @@ export class UpdateComponent implements OnInit {
 
   createForm() {
     this.updateForm = this.fb.group({
-      id: ['', Validators.required ],
-	    cat_name: ['', Validators.required ],
-	    prod_name: ['', Validators.required ],
+	    categories: ['', Validators.required ],
+	    name: ['', Validators.required ],
 	    image: '',
 	    qty: ['', Validators.required ],
 	    expr_date: ['', Validators.required ],
@@ -56,9 +55,8 @@ export class UpdateComponent implements OnInit {
 
     
     this.updateForm.reset({
-      id: '',
-      cat_name: '',
-      prod_name: '',
+      categories: '',
+      name: '',
       image: '',
       qty: '',
       expr_date: '',

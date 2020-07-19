@@ -9,20 +9,16 @@
     <form novalidate [formGroup]="updateForm" #uform="ngForm" (ngSubmit)="onSubmit()">
       <p>
         <mat-form-field class="half-width">
-          <input matInput formControlName="id" placeholder="Id" type="text" required>
-          <mat-error *ngIf="updateForm.get('id').hasError('required') && updateForm.get('id').touched">Id is required</mat-error>
-        </mat-form-field>
-        <mat-form-field class="half-width">
-          <mat-select matInput placeholder="Category" formControlName="cat_name" required>
+          <mat-select matInput placeholder="Category" formControlName="categories" required>
             <mat-option *ngFor="let ctype of categoryType" [value]="ctype">
               {{ ctype }}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="updateForm.get('cat_name').hasError('required') && updateForm.get('cat_name').touched">Category is required</mat-error>
+          <mat-error *ngIf="updateForm.get('categories').hasError('required') && updateForm.get('categories').touched">Category is required</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
-          <input matInput formControlName="prod_name" placeholder="Item Name" type="text" required>
-          <mat-error *ngIf="updateForm.get('prod_name').hasError('required') && updateForm.get('prod_name').touched">Product name is required</mat-error>
+          <input matInput formControlName="name" placeholder="Item Name" type="text" required>
+          <mat-error *ngIf="updateForm.get('name').hasError('required') && updateForm.get('name').touched">Product name is required</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
           <input type="number" id="qty" name="qty" step="1" matInput formControlName="qty" placeholder="Quantity" required>

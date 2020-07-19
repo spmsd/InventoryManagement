@@ -55,7 +55,7 @@ export class InventoryService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type':  'application/json' })
     };
-
+    console.log(item);
     return this.http.post<Inventory>(baseURL + 'inventories/', item, httpOptions);
   }
 
