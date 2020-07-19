@@ -12,10 +12,10 @@
   
   <div fxFlex *ngIf="displaylist">
     <mat-grid-list cols="3" rowHeight="150px">
-      <mat-grid-tile *ngFor="let item of displaylist" [routerLink]="['/itemdetail', item.id]"> <!--Sending this to another component-->
+      <mat-grid-tile *ngFor="let item of displaylist" [routerLink]="['/itemdetail', item._id]"> <!--Sending this to another component-->
         <img height="100px" src="{{item.image}}">
         <mat-grid-tile-footer>
-          Name : {{item.prod_name | uppercase}}<br>
+          Name : {{item.name | uppercase}}<br>
         </mat-grid-tile-footer>
       </mat-grid-tile>
     </mat-grid-list>

@@ -24,18 +24,18 @@ export class InventoryService {
 
  
   getSingleItem(id: string): Observable<Inventory> {
-    let params1 = new HttpParams().set('id',id);
-    console.log(baseURL + 'inventories/',{params:params1});
-    return this.http.get<Inventory>(baseURL + 'inventories/',{params:params1});
-    
-    //return this.http.get<Inventory>(baseURL + 'inventories/?id='+id);
+    console.log(id);
+    //let params1 = new HttpParams().set('id',id);
+    console.log(baseURL + 'inventories/'+id);
+    return this.http.get<Inventory>(baseURL + 'inventories/'+id);
 
   }
 
   getCategoryList(cat_name: string): Observable<Inventory[]>{
-    let params1 = new HttpParams().set('cat_name',cat_name);
-    console.log(baseURL + 'inventories/',{params:params1});
-    return this.http.get<Inventory[]>(baseURL + 'inventories/',{params:params1});
+    console.log(cat_name);
+    //let params1 = new HttpParams().set('cat_name',cat_name);
+    console.log(baseURL + 'categories/'+cat_name);
+    return this.http.get<Inventory[]>(baseURL + 'categories/'+cat_name);
   }
 
   updatePutItem(item: Inventory): Observable<Inventory> {
@@ -46,7 +46,8 @@ export class InventoryService {
         'Content-Type':  'application/json'
       })
     };
-    return this.http.put<Inventory>(baseURL + 'inventories/' + item.id, item, httpOptions);
+    console.log(baseURL + 'inventories/' + item._id);
+    return this.http.put<Inventory>(baseURL + 'inventories/' + item._id, item, httpOptions);
 
   }
 
@@ -54,6 +55,7 @@ export class InventoryService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type':  'application/json' })
     };
+
     return this.http.post<Inventory>(baseURL + 'inventories/', item, httpOptions);
   }
 

@@ -34,7 +34,7 @@ export class ItemdetailComponent implements OnInit {
   ngOnInit() {
 
       this.route.params.pipe(switchMap((params: Params) => this.inventoryservice.getSingleItem(params['id'])))
-      .subscribe(item => {this.item = item[0];});
+      .subscribe(item => {this.item = item; console.log(this.item);});
 
   }
 

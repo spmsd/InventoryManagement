@@ -6,11 +6,12 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
+
   <div fxFlex *ngIf="item" class="table-responsive"> <!-- dish is the variable from dishdetail.ts file-->
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <h3>{{item.prod_name}} Details</h3>
+          <h3>{{item.name}} Details</h3>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
@@ -21,7 +22,7 @@
           </tr>
           <tr>
             <td>Name</td>
-            <td>{{item.prod_name | uppercase}}</td>
+            <td>{{item.name | uppercase}}</td>
           </tr>
           <tr>
             <td>Quantity</td>

@@ -2,7 +2,7 @@ import { Inventory } from './inventory';
 
 export const INVENTORIES: Inventory[] = [
   {
-      id: '101',
+      _id: '101',
       category: "Vegetables",
       name: "Carrot",
       image: "/assets/images/carrot.jpg",
@@ -12,7 +12,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "mark"
     },
      {
-      id: "102",
+      _id: "102",
       category: "Vegetables",
       name: "Capsicum",
       image: "/assets/images/capsicum.jpg",
@@ -22,7 +22,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "bob"
     },
     {
-      id: "103",
+      _id: "103",
       category: "Fruits",
       name: "Orange",
       image: "/assets/images/orange.jpg",
@@ -32,7 +32,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "mark"
     },
     {
-      id: "104",
+      _id: "104",
       category: "Snacks",
       name: "Donut",
       image: "/assets/images/donut.png",
@@ -42,7 +42,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "Dunkin"
     },
     {
-      id: "105",
+      _id: "105",
       category: "Vegetables",
       name: "Cabbage",
       image: "/assets/images/cabbage.jpg",
@@ -52,7 +52,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "Priya"
     },
     {
-      id: "106",
+      _id: "106",
       category: "Vegetables",
       name: "Spinach",
       image: "/assets/images/spinach.jpg",
@@ -62,7 +62,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "John"
     },
     {
-      id: "107",
+      _id: "107",
       category: "Fruits",
       name: "Mango",
       image: "/assets/images/mango.jpg",
@@ -72,7 +72,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "John"
     },
      {
-      id: "110",
+      _id: "110",
       category: "Fruits",
       name: "Grapes",
       image: "/assets/images/grapes.jpg",
@@ -82,7 +82,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "John"
     },
     {
-      id: "108",
+      _id: "108",
       category: "Snacks",
       name: "Chips",
       image: "/assets/images/chip.jpg",
@@ -92,7 +92,7 @@ export const INVENTORIES: Inventory[] = [
       seller: "Lays"
     },
     {
-      id: "109",
+      _id: "109",
       category: "Snacks",
       name: "Cookies",
       image: "/assets/images/cookie.jpg",

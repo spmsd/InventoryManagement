@@ -11,10 +11,10 @@
 
   <div fxFlex>
     <mat-grid-list cols="3" rowHeight="150px">
-      <mat-grid-tile *ngFor="let category of categories" [routerLink]="['/category-list', category.cat_name]">
+      <mat-grid-tile *ngFor="let category of categories" [routerLink]="['/category-list', category.name]">
         <img height="100px" src="{{category.image}}">
         <mat-grid-tile-footer>
-          {{category.cat_name | uppercase}}
+          {{category.name | uppercase}}
         </mat-grid-tile-footer>
       </mat-grid-tile>
     </mat-grid-list>
