@@ -1,3 +1,4 @@
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,7 @@ import {MatInputModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { baseURL } from './shared/baseurl';
+
 
 import { AppComponent } from './app.component';
 
@@ -55,7 +57,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
     HttpClientModule
   ],
   providers: [CategoryService,InventoryService,
-  {provide: 'baseURL', useValue: baseURL}
+  {provide: 'baseURL', useValue: baseURL},
+  {provide : LocationStrategy , useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
