@@ -38,11 +38,13 @@ export class ItemdetailComponent implements OnInit {
 
   }
 
+ 
+
   createForm() {
     this.editForm = this.fb.group({
-      qty: ['', Validators.required ],
+      qty: ['', [Validators.required, Validators.min(0)] ],
       expr_date: ['', Validators.required ],
-      price: ['', Validators.required ]
+      price: ['', [Validators.required, Validators.min(0) ]]
     });
   }
 
