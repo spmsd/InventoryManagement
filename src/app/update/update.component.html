@@ -21,11 +21,11 @@
           <mat-error *ngIf="updateForm.get('name').hasError('required') && updateForm.get('name').touched">Product name is required</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
-          <input type="number" id="qty" name="qty" step="1" matInput formControlName="qty" placeholder="Quantity" required>
+          <input type="number" id="qty" name="qty" step="1" min="0" matInput formControlName="qty" placeholder="Quantity" required>
           <mat-error *ngIf="updateForm.get('qty').hasError('required') && updateForm.get('qty').touched">Quantity is required</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
-          <input matInput formControlName="price" placeholder="Price" type="text" required>
+          <input matInput formControlName="price" placeholder="Price" type="number" min="0" required>
           <mat-error *ngIf="updateForm.get('price').hasError('required') && updateForm.get('price').touched">Price is required</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
@@ -37,7 +37,7 @@
           <mat-error *ngIf="updateForm.get('expr_date').hasError('required') && updateForm.get('expr_date').touched">Expiration date is required</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
-          <input matInput formControlName="image" placeholder="Image" type="text">
+          <input matInput formControlName="image" placeholder="Image URL" type="text">
         </mat-form-field>
       </p>
       <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="updateForm.invalid">Submit</button>

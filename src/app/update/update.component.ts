@@ -41,9 +41,9 @@ export class UpdateComponent implements OnInit {
 	    categories: ['', Validators.required ],
 	    name: ['', Validators.required ],
 	    image: '',
-	    qty: ['', Validators.required ],
+	    qty: ['', [Validators.required, Validators.min(0)] ],
 	    expr_date: ['', Validators.required ],
-	    price: ['', Validators.required ],
+	    price: ['', [Validators.required, Validators.min(0)] ],
 	    seller: ['', Validators.required ]
     });
   }
