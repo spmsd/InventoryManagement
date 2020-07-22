@@ -38,7 +38,6 @@ export class ItemdetailComponent implements OnInit {
 
   }
 
- 
 
   createForm() {
     this.editForm = this.fb.group({
